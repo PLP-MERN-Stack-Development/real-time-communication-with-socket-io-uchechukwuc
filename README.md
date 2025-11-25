@@ -1,77 +1,164 @@
-# Real-Time Chat Application with Socket.io
+# 🔄 Real-Time Chat Application with Socket.io
 
-This assignment focuses on building a real-time chat application using Socket.io, implementing bidirectional communication between clients and server.
+A modern, real-time chat application built with Socket.io, React, and Node.js. Features bidirectional communication, private messaging, message reactions, and comprehensive notifications.
 
-## Assignment Overview
+**Week 5 Assignment - Real-Time Communication with Socket.io** - Complete implementation of all required tasks including core chat functionality, advanced features, and real-time notifications.
 
-You will build a chat application with the following features:
-1. Real-time messaging using Socket.io
-2. User authentication and presence
-3. Multiple chat rooms or private messaging
-4. Real-time notifications
-5. Advanced features like typing indicators and read receipts
+## 🚀 Features
 
-## Project Structure
+### Core Functionality
+- ✅ **Real-time messaging** - Instant message delivery using Socket.io
+- ✅ **User authentication** - Simple username-based login system
+- ✅ **Multiple chat rooms** - Switch between different channels (#general, #random, #tech, #gaming)
+- ✅ **Private messaging** - Direct messages between users
+- ✅ **Online status** - See who's online and available to chat
+- ✅ **Typing indicators** - Know when someone is typing a message
+- ✅ **Message timestamps** - All messages include send time
+
+### Advanced Features
+- ✅ **Message reactions** - React to messages with emojis (👍❤️😂😮😢😡)
+- ✅ **Read receipts** - See when messages are sent (✓) and read (✓✓)
+- ✅ **File & image sharing** - Upload and share images, documents, and files (up to 10MB)
+- ✅ **Browser notifications** - Get notified of new messages when app is not focused
+- ✅ **Sound notifications** - Audio alerts for new messages and user activity
+- ✅ **Unread message count** - Track unread messages in the sidebar
+- ✅ **Responsive design** - Works seamlessly on desktop and mobile devices
+- ✅ **Connection status** - Visual indicators for connection state
+
+### Technical Features
+- ✅ **Automatic reconnection** - Handles network interruptions gracefully
+- ✅ **Message persistence** - Messages stored in MongoDB with in-memory fallback
+- ✅ **Real-time user list** - Live updates of online users
+- ✅ **System messages** - Notifications for user join/leave events
+- ✅ **Room-based messaging** - Messages are scoped to specific chat rooms
+- ✅ **File upload system** - Secure file storage with type validation
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 18, Vite, Socket.io Client
+- **Backend**: Node.js, Express, Socket.io, MongoDB/Mongoose
+- **Database**: MongoDB Atlas (with in-memory fallback)
+- **Styling**: CSS3 with modern design patterns
+- **Real-time Communication**: Socket.io with WebSocket protocol
+
+## 📁 Project Structure
 
 ```
-socketio-chat/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # UI components
-│   │   ├── context/        # React context providers
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── pages/          # Page components
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   │   ├── Login.jsx
+│   │   │   ├── ChatRoom.jsx
+│   │   │   ├── MessageList.jsx
+│   │   │   ├── Message.jsx
+│   │   │   ├── MessageInput.jsx
+│   │   │   ├── UserList.jsx
+│   │   │   └── RoomList.jsx
 │   │   ├── socket/         # Socket.io client setup
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Node.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Socket event handlers
-│   ├── models/             # Data models
-│   ├── socket/             # Socket.io server setup
-│   ├── utils/              # Utility functions
+│   │   ├── utils/          # Utility functions
+│   │   │   └── notifications.js
+│   │   └── App.jsx
+│   ├── package.json
+│   └── vite.config.js
+├── server/                 # Node.js backend
+│   ├── config/
+│   │   └── database.js     # MongoDB connection
+│   ├── models/             # Mongoose models
+│   │   ├── User.js
+│   │   ├── Message.js
+│   │   └── Room.js
+│   ├── uploads/            # File upload directory
 │   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
+│   └── package.json
+└── README.md
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week5-Assignment.md` file
-4. Complete the tasks outlined in the assignment
-
-## Files Included
-
-- `Week5-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Socket.io configuration templates
-  - Sample components for the chat interface
-
-## Requirements
-
-- Node.js (v18 or higher)
+### Prerequisites
+- Node.js (v18+ recommended)
 - npm or yarn
-- Modern web browser
-- Basic understanding of React and Express
 
-## Submission
+### Installation
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd real-time-communication-with-socket-io
+   ```
 
-1. Complete both the client and server portions of the application
-2. Implement the core chat functionality
-3. Add at least 3 advanced features
-4. Document your setup process and features in the README.md
-5. Include screenshots or GIFs of your working application
-6. Optional: Deploy your application and add the URLs to your README.md
+2. **Install server dependencies**
+   ```bash
+   cd server
+   npm install
+   ```
 
-## Resources
+3. **Install client dependencies**
+   ```bash
+   cd ../client
+   npm install
+   ```
 
-- [Socket.io Documentation](https://socket.io/docs/v4/)
-- [React Documentation](https://react.dev/)
-- [Express.js Documentation](https://expressjs.com/)
-- [Building a Chat Application with Socket.io](https://socket.io/get-started/chat) 
+4. **Start the development servers**
+
+   **Terminal 1 - Server:**
+   ```bash
+   cd server
+   npm run dev
+   ```
+
+   **Terminal 2 - Client:**
+   ```bash
+   cd client
+   npm run dev
+   ```
+
+5. **Open your browser**
+    - Client will be running at: `http://localhost:5174`
+    - Server will be running at: `http://localhost:5001`
+
+## 🎯 Usage
+
+1. **Join the chat**: Enter a unique username to join the chat room
+2. **Switch rooms**: Click on room names in the left sidebar (#general, #random, #tech, #gaming)
+3. **Send messages**: Type in the input field and press Enter or click send
+4. **Share files**: Click the 📎 button to attach images or documents (up to 10MB)
+5. **Private messaging**: Click on a user's name in the right sidebar to start a private conversation
+6. **React to messages**: Click the 😊 button on any message to add reactions
+7. **Read receipts**: See ✓ (sent) and ✓✓ (read) status on your messages
+8. **Notifications**: Grant browser notification permission for alerts when away from the app
+
+## 🔧 Configuration
+
+### Environment Variables
+
+**Client (.env)**
+```
+VITE_SOCKET_URL=http://localhost:5001
+```
+
+
+
+**MongoDB Setup**
+1. Replace `YOUR_PASSWORD_HERE` with your actual MongoDB Atlas password
+2. If MongoDB connection fails, the app automatically falls back to in-memory storage
+3. The app works with or without MongoDB - no MongoDB means data is stored in memory only
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- [Socket.io](https://socket.io/) for real-time communication
+- [React](https://reactjs.org/) for the frontend framework
+- [Vite](https://vitejs.dev/) for fast development builds
+- [Express](https://expressjs.com/) for the backend framework
+
+## 📞 Support
+
+If you have any questions or issues, please open an issue on GitHub or contact the development team.
+
+---
+
+**Happy chatting! 🎉**
