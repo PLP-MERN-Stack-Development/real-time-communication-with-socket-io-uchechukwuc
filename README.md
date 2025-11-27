@@ -1,3 +1,5 @@
+https://real-time-communication-with-socket-eta-nine.vercel.app
+
 # 🔄 Real-Time Chat Application with Socket.io
 
 A modern, real-time chat application built with Socket.io, React, and Node.js. Features bidirectional communication, private messaging, message reactions, and comprehensive notifications.
